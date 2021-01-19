@@ -1,0 +1,32 @@
+
+plugins {
+    id 'java-library'
+}
+
+apply plugin: 'me.tatarka.retrolambda'
+
+apply plugin: 'maven' //添加 maven 插件
+
+uploadArchives {
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            // 仓库路径（只能是hosted仓库）
+            repository(url: 'http://10.1.9.109:8081/repository/android-maven-hosted/') {
+                //  Nexus 发布者 的账户密码
+                authentication(userName: 'androidVisitors', password: 'androidVisitors@123')
+            }
+            pom.project {
+                version '1.0.1' //库的版本
+                artifactId 'sensitiveWordLib' //库名
+                groupId 'com.leimans.lib' //库所在的组
+                description '敏感词过滤库'  //库更新说明
+            }
+        }
+    }
+}
+
+java {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+}
