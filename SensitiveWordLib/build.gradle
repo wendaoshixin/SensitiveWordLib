@@ -17,10 +17,10 @@ uploadArchives {
                 authentication(userName: 'androidVisitors', password: 'androidVisitors@123')
             }
             pom.project {
-                version '1.0.1' //库的版本
+                version '1.0.3' //库的版本
                 artifactId 'sensitiveWordLib' //库名
                 groupId 'com.leimans.lib' //库所在的组
-                description '敏感词过滤库'  //库更新说明
+                description '新增dfa算法和tree算法,匹配敏感词'  //库更新说明
             }
         }
     }

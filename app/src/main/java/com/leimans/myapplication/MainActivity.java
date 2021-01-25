@@ -1,10 +1,8 @@
 package com.leimans.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-
-import com.leimans.sensitivewordlib.Demo;
+import com.leimans.sensitivewordlib.dfa.Demo2;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private void test(){
         Runnable task=()->{
             try {
-               new Demo().testAsset(getAssets().open("sensi_words.txt"),false);
+               new Demo2().test2(getAssets().open("sensitivewords.txt"));
             }catch (Exception e){
                 e.printStackTrace();
             }
